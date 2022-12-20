@@ -14,8 +14,8 @@ import java.util.stream.Stream;
     private String windows_filepath;
     @Value("${com.vh1ne.linux.filepath}")
     private String linux_filepath;
-    @GetMapping("/hello")
-    public String hello()
+    @GetMapping("/file")
+    public String file()
     {
         System.out.println("filepath "+ linux_filepath );
         try (Stream<String> stream = Files.lines(Paths.get(windows_filepath))) {
@@ -25,6 +25,20 @@ import java.util.stream.Stream;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return "Hello " ;
+    }
+    @GetMapping("/hello")
+    public String hello()
+    {
+
+
+        return "Hello " ;
+    }
+    @GetMapping()
+    public String base()
+    {
+
+
         return "Hello " ;
     }
 }
